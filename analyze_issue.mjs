@@ -249,10 +249,7 @@ This issue has an invalid Puppeteer version: \`${value}\`. Versions must follow 
   await mkdir("out");
   Promise.all([
     writeFile(join("out", "main.ts"), mvce.split("\n").slice(1, -1).join("\n")),
-    writeFile(
-      join("out", "puppeteer-error.txt"),
-      error.split("\n").slice(1, -1).join("\n")
-    ),
+    writeFile(join("out", "puppeteer-error.txt"), error.split("\n").join("\n")),
     writeFile(
       join("out", "puppeteer.config.js"),
       configuration.split("\n").slice(1, -1).join("\n")
